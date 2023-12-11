@@ -24,9 +24,9 @@ state_dict = {"State": state,
 DBusGMainLoop(set_as_default=True)
 bus = dbus.SessionBus()
 
-def bus_handler(_sender=None, contents=None, test=None):
+def bus_handler(_sender=None, contents=None, _=None):
     global state_dict
-    #print(contents, "------------", test)
+    #print(contents)
 
     if "Elapsed" in contents:
         state_dict["Elapsed"] = int(contents["Elapsed"])
